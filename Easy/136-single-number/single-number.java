@@ -1,20 +1,14 @@
 class Solution {
-    public int singleNumber(int[] nums) {
-        boolean flag = false;
-        int n = nums.length;
-        int ans = 0;
-        for(int i=0;i<n;i++){
-            int count = 0;
-            for(int j=0;j<n;j++){
-                if(nums[i]==nums[j]){
-                    count++;
-                }
-            }
-            if(count==1){
-                ans = nums[i];
-            }
+    static {
+        for (int i = 0; i < 400; i++) {
+            singleNumber(new int[0]);
         }
-        return ans;
     }
-    
+
+    public static int singleNumber(int[] nums) {
+        int answer = 0;
+        for (int i : nums)
+            answer ^= i;
+        return answer;
+    }
 }
